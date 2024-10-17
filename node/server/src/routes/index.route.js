@@ -31,7 +31,7 @@ router.get("/:userId", (_, res) => {
     // res.sendFile(path.resolve(__dirname, "client", "pages", "profile", "profile.html"));
 });
 router.get("/", (_, res) => {
-    res.sendFile(path.resolve(__dirname, "node", "client", "pages", "index", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
     // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
 });
 
