@@ -7,7 +7,7 @@ import { router } from "./src/routes/index.route.js";
 const app = express();
 const port = 3000;
 
-app.use(express.static(resolve(resolve("../client"))));
+app.use(express.static(resolve(resolve("public"))));
 app.use(router);
 
 app.listen(port, () => {

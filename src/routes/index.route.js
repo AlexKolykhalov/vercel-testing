@@ -7,7 +7,7 @@ const router = Router();
 const __dirname = resolve();
 
 router.get("/", (req, res) => {
-    res.sendFile(resolve(__dirname, "..", "client", "pages", "index", "index.html"));
+    res.sendFile(resolve(__dirname, "public", "pages", "index", "index.html"));
 });
 
 export { router };
