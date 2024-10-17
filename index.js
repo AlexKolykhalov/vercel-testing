@@ -3,9 +3,9 @@
 import express from "express";
 import path from "path";
 import cookieParser from 'cookie-parser';
-import db from "./src/database/models/index.js";
-import router from "./src/routes/index.route.js";
-import { errorHandler } from "./src/middlewares/errorHandler.middleware.js"
+import db from "./server/src/database/models/index.js";
+import router from "./server/src/routes/index.route.js";
+import { errorHandler } from "./server/src/middlewares/errorHandler.middleware.js"
 
 // const __rootname = path.resolve(path.resolve(), "..");
 const port = process.env.PORT;
