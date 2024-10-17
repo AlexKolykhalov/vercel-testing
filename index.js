@@ -18,7 +18,7 @@ app.use(router);
 app.use(errorHandler);
 
 try {    
-    await db.sequelize.authenticate();
+    // await db.sequelize.authenticate();
     app.listen(port, () => console.log(`Server (${process.env.NODE_ENV}) has been started at port: ${port}...`));
 } catch (error) {
     console.error(error);
