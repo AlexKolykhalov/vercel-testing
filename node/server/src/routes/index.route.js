@@ -5,7 +5,6 @@ import userRouter from "./user.route.js";
 
 const __rootname = path.resolve(path.resolve(), "..");
 const __dirname = path.resolve();
-console.log(`__dirname: ${__dirname}`);
 const router     = Router();
 
 router.use("/api",      authRouter);
@@ -31,9 +30,8 @@ router.get("/:userId", (_, res) => {
     // res.sendFile(path.resolve(__dirname, "client", "pages", "profile", "profile.html"));
 });
 router.get("/", (_, res) => {
-    // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
-    console.log(path.join("/", "client", "pages", "index", "index.html"));    
-    res.sendFile(path.join("/", "client", "pages", "index", "index.html"));
+    // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));    
+    res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"), (err) => {console.log(err)});
     // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
 });
 
