@@ -11,7 +11,7 @@ const port = 3000;
 // app.use(express.static(resolve("public")));
 // app.use(router);
 app.get("/", (req, res) => {
-    res.status(200).sendFile(resolve(__dirname, "client", "pages", "index", "index.html"));
+    res.status(200).sendFile(resolve(__dirname, "public", "pages", "index", "index.html"));
 });
 
 app.listen(port, () => {
