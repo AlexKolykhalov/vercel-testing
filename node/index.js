@@ -20,6 +20,7 @@ const __dirname = resolve("node");
 const port = 3000;
 
 app.get("/", (req, res) => {
+    console.log("From /");
     res.status(200).sendFile(resolve(__dirname, "public", "pages", "index", "index.html"));
 });
 
