@@ -11,7 +11,7 @@ import { errorHandler } from "./server/src/middlewares/errorHandler.middleware.j
 const port = process.env.PORT;
 const app = express();
 // app.use(express.static(path.resolve(__rootname, "client")));
-// app.use(express.static(path.resolve("client")));
+app.use(express.static(path.resolve("top", "node", "client")));
 app.use(express.json());
 app.use(cookieParser());
 app.use(router);

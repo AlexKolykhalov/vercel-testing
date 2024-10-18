@@ -6,7 +6,7 @@ import userRouter from "./user.route.js";
 // const __rootname = path.resolve(path.resolve(), "..");
 
 const __dirname = path.resolve("top", "node");
-const router     = Router();
+const router    = Router();
 
 router.use("/api",      authRouter);
 router.use("/api/user", userRouter);
