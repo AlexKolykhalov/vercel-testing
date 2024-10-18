@@ -4,6 +4,7 @@ import authRouter from "./auth.route.js";
 import userRouter from "./user.route.js";
 
 const __rootname = path.resolve(path.resolve(), "..");
+console.log(`rootname: ${__rootname}`);
 const __dirname = path.resolve();
 const router     = Router();
 
