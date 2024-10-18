@@ -31,8 +31,7 @@ router.get("/:userId", (_, res) => {
 });
 router.get("/", (_, res) => {
     // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));    
-    res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"), (err) => {console.log(err)});
-    // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
+    res.sendFile(path.resolve("node", "client", "pages", "index", "index.html"));    
 });
 
 export default router;
