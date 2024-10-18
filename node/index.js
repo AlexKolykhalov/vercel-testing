@@ -20,7 +20,7 @@ app.use(errorHandler);
 try {    
     // await db.sequelize.authenticate();
     app.get("/", (req, res) => {
-	res.status(200).sendFile(path.resolve("client", "pages", "index", "index.html"));
+	res.status(200).sendFile(path.resolve("node", "public", "pages", "index", "index.html"));
     });
     app.listen(port, () => {
 	console.log(`Server (${process.env.NODE_ENV}) has been started at port: ${port}...`);
