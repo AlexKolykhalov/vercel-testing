@@ -8,20 +8,17 @@ import router from "./server/src/routes/index.route.js";
 import { errorHandler } from "./server/src/middlewares/errorHandler.middleware.js"
 
 // const __rootname = path.resolve(path.resolve(), "..");
-const port = process.env.PORT;
+const port = 3000;
 const app = express();
 // app.use(express.static(path.resolve(__rootname, "client")));
-// app.use(express.static(path.resolve("top", "node", "client")));
+app.use(express.static(path.resolve("client")));
 app.use(express.json());
 app.use(cookieParser());
-// app.use(router);
+app.use(router);
 app.use(errorHandler);
 
 try {    
     // await db.sequelize.authenticate();
-    app.get("/", (req, res) => {
-	res.status(200).sendFile(path.resolve("node", "public", "pages", "index", "index.html"));
-    });
     app.listen(port, () => {
 	console.log(`Server (${process.env.NODE_ENV}) has been started at port: ${port}...`);
     });

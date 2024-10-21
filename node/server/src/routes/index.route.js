@@ -5,7 +5,7 @@ import userRouter from "./user.route.js";
 
 // const __rootname = path.resolve(path.resolve(), "..");
 
-const __dirname = path.resolve("top", "node");
+const __dirname = path.resolve("node");
 const router    = Router();
 
 router.use("/api",      authRouter);
@@ -26,13 +26,13 @@ router.get("/404", (_, res) => {
     res.sendFile(path.resolve(__rootname, "public", "pages", "404", "404.html"));
     // res.sendFile(path.resolve(__dirname, "client", "pages", "404", "404.html"));
 });
-router.get("/:userId", (_, res) => {    
+router.get("/:userId", (_, res) => {
     res.sendFile(path.resolve(__rootname, "public", "pages", "profile", "profile.html"));
     // res.sendFile(path.resolve(__dirname, "client", "pages", "profile", "profile.html"));
 });
 router.get("/", (_, res) => {
-    // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));    
-    res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));    
+    // res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "pages", "index", "index.html"));
 });
 
 export default router;
