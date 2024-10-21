@@ -7,7 +7,6 @@ import { router } from "./src/routes/index.route.js";
 const port = 3000;
 const app = express();
 
-// const __dirname = resolve("node");
 app.use(express.static(resolve("public")));
 app.use(express.json());
 app.use(router);
