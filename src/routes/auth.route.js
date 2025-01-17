@@ -18,7 +18,7 @@ router.post("/api/signup", emailValidator, passwordValidator, AuthController.sig
 router.get("/api/refresh", refreshTokenValidator,             AuthController.refresh);
 router.get("/api/logout",                                     AuthController.logout);
 
-router.get("/login",  (_, res) => { res.sendFile("var/task/public/html/login.html"); });
+router.get("/login",  (_, res) => { res.sendFile("html/login.html", { root: "public" }); });
 // router.get("/login",  (_, res) => { res.sendFile("html/login.html",  { root: staticPath }); });
 router.get("/signup", (_, res) => { res.sendFile("html/signup.html", { root: staticPath }); });
 
