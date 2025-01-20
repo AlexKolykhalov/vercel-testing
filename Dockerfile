@@ -8,4 +8,6 @@ RUN npm install && npm run build
 
 WORKDIR dist
 
+RUN npm init -y
+
 CMD [ "node", "index.js" ]
