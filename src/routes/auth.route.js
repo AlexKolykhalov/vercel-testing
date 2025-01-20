@@ -1,7 +1,5 @@
 //@ts-check
 
-import path from "path";
-
 import { Router }                            from "express";
 import { AuthController }                    from "../controllers/auth.controller.js";
 import { emailValidator, passwordValidator } from "../validators/auth.validator.js";
@@ -18,8 +16,7 @@ router.post("/api/signup", emailValidator, passwordValidator, AuthController.sig
 router.get("/api/refresh", refreshTokenValidator,             AuthController.refresh);
 router.get("/api/logout",                                     AuthController.logout);
 
-router.get("/login",  (_, res) => { res.sendFile("html/login.html", { root: "public" }); });
-// router.get("/login",  (_, res) => { res.sendFile("html/login.html",  { root: staticPath }); });
+router.get("/login",  (_, res) => { res.sendFile("html/login.html", { root: staticPath }); });
 router.get("/signup", (_, res) => { res.sendFile("html/signup.html", { root: staticPath }); });
 
 export default router;
