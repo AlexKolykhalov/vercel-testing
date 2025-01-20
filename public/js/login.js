@@ -4,9 +4,13 @@
 const loginBtn = document.querySelector('.login-btn');
 
 /** @type {string} */
+// const url = process.env.NODE_ENV === "development" ?
+//       process.env.DEV_HOST ?? "unknown" :
+//       process.env.PROD_HOST ?? "unknown";
+
 const url = process.env.NODE_ENV === "development" ?
-      process.env.DEV_HOST ?? "unknown" :
-      process.env.PROD_HOST ?? "unknown";
+      "dev" :
+      "prod";
 
 // ************************** 1. Events *********************************//
 
