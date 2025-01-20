@@ -4,7 +4,7 @@ WORKDIR /work
 
 COPY . .
 
-RUN npm install && NODE_ENV=production npm run build
+RUN npm install && npm run build
 
 WORKDIR dist
 
