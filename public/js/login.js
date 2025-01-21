@@ -8,10 +8,6 @@ const loginBtn = document.querySelector('.login-btn');
 //       process.env.DEV_HOST ?? "unknown" :
 //       process.env.PROD_HOST ?? "unknown";
 
-const url = process.env.NODE_ENV === "production" ?
-      process.env.DEV_HOST :
-      "dev";
-
 // ************************** 1. Events *********************************//
 
 loginBtn?.addEventListener('click', async () => {
@@ -22,7 +18,8 @@ loginBtn?.addEventListener('click', async () => {
   if (email && password) {
     try {
       loginBtn.querySelector(".clock-spinner")?.removeAttribute("data-visible");
-      const response = await fetch(`${url}/api/login`, {
+      // const response = await fetch(`${url}/api/login`, {
+      const response = await fetch(`/api/login`, {
 	method: "POST",
 	headers: {"Content-Type": "application/json"},
 	body: JSON.stringify({email: email.value, password: password.value}),
