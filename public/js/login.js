@@ -9,7 +9,7 @@ const loginBtn = document.querySelector('.login-btn');
 //       process.env.PROD_HOST ?? "unknown";
 
 const url = process.env.NODE_ENV === "production" ?
-      "prod" :
+      process.env.DEV_HOST :
       "dev";
 
 // ************************** 1. Events *********************************//
