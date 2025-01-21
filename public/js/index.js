@@ -6,9 +6,9 @@
  */
 
 /** @type {string} */
-const url = process.env.NODE_ENV === "development" ?
-      process.env.DEV_HOST ?? "unknown" :
-      process.env.PROD_HOST ?? "unknown";
+// const url = process.env.NODE_ENV === "development" ?
+//       process.env.DEV_HOST ?? "unknown" :
+//       process.env.PROD_HOST ?? "unknown";
 
 /** @type {User} */
 let dbUserData = {userId: "", avatar: "", name: "", email: "", links: []};
@@ -45,7 +45,7 @@ saveBtn.addEventListener('click', async () => {
     // console.log(`changed user data: ${JSON.stringify(currentUserData, null, 2)}`);
     clockSpinner.removeAttribute("data-visible");
     const accessToken = ("; "+document.cookie).split("; _t1=").pop()?.split(";").shift();
-    const response = await fetch(`${url}/api/user/update`, {
+    const response = await fetch(`/api/user/update`, {
       method: "POST",
       headers: {
 	"Content-Type": "application/json",
@@ -69,10 +69,10 @@ saveBtn.addEventListener('click', async () => {
       import("/public/helpers.js").then(fn => fn.showPopUpMessage(error.message));
     }
     if (response.status === 401) {
-      const refreshResponse = await fetch(`${url}/api/refresh`);
+      const refreshResponse = await fetch(`/api/refresh`);
       if (refreshResponse.status === 200) {
 	const accessToken = ("; "+document.cookie).split("; _t1=").pop()?.split(";").shift();
-	const response = await fetch(`${url}/api/user/update`, {
+	const response = await fetch(`/api/user/update`, {
 	  method: "POST",
 	  headers: {
 	    "Content-Type": "application/json",
@@ -121,7 +121,7 @@ logoutBtn.addEventListener('click', async () => {
 
   try {
     clockSpinner.removeAttribute("data-visible");
-    const response = await fetch(`${url}/api/logout`);
+    const response = await fetch(`/api/logout`);
     if (response.status === 200) window.location.replace("/login");
     if (response.status === 500) {
       clockSpinner.setAttribute("data-visible", "false");
