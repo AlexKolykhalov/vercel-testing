@@ -11,10 +11,10 @@
 //       process.env.PROD_HOST ?? "unknown";
 
 /** @type {User} */
-let dbUserData = {userId: "", avatar: "", name: "", email: "", links: []};
+let dbUserData = { userId: "", avatar: "", name: "", email: "", links: [] };
 
 /** @type {User} */
-let currentUserData = {userId: "", avatar: "", name: "", email: "", links: []};
+let currentUserData = { userId: "", avatar: "", name: "", email: "", links: [] };
 
 let compiledLinkTemplate;
 
