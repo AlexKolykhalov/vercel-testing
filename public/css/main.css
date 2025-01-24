@@ -446,7 +446,7 @@ section > article {
 }
 
 .input-link:before {
-  content: var(--domain);
+  content: var(--link-content);
 
   position: absolute;
   top: 50%;

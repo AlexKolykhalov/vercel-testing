@@ -5,11 +5,6 @@
  * @typedef { import("../../src/types/typedefs.js").Link } Link
  */
 
-/** @type {string} */
-// const url = process.env.NODE_ENV === "development" ?
-//       process.env.DEV_HOST ?? "unknown" :
-//       process.env.PROD_HOST ?? "unknown";
-
 /** @type {User} */
 let dbUserData = { userId: "", avatar: "", name: "", email: "", links: [] };
 
@@ -139,7 +134,7 @@ if (!addNewLinkBtn) throw new Error("Can't find .add-new-link-btn");
 addNewLinkBtn.addEventListener('click', () => {
   /** @type {Link} */
   const defaultLinkData = {
-    linkId: crypto.randomUUID(),
+    id: crypto.randomUUID(),
     source: "GitHub",
     url: ""
   };
@@ -384,7 +379,7 @@ function getUserData() {
     if (source && source.textContent && url) {
       if (!item.getAttribute("id")) throw new Error("Link without ID");
       const link = {
-	linkId: item.getAttribute("id") ?? "",
+	id: item.getAttribute("id") ?? "",
 	source: source.textContent,
 	url: url.value.trim()
       };
@@ -410,32 +405,48 @@ async function addNewLink(link) {
   if (!addNewLinkBtn) throw new Error("Can'f find .add-new-link-btn");
   if (!userLinks)     throw new Error("Can'f find .user-links");
 
-  const fn = await import("/public/helpers.js");  
-  const { domain, whiteIcon, grayIcon, bgColor, offset } = fn.getLinkInfoByName(link.source);
-  const newLink = {
-    id: link.linkId,
-    domain: domain,
-    whiteIcon: whiteIcon,
-    grayIcon: grayIcon,
-    bgColor: bgColor,
-    offset: offset,
-    url: link.url,
-    source: link.source
-  };
+  // const fn = await import("/public/helpers.js");
+  // const { domain, whiteIcon, grayIcon, bgColor, offset } = fn.getLinkInfoByName(link.source);
+  // const newLink = {
+  //   id: link.linkId,
+  //   domain: domain,
+  //   whiteIcon: whiteIcon,
+  //   grayIcon: grayIcon,
+  //   bgColor: bgColor,
+  //   offset: offset,
+  //   url: link.url,
+  //   source: link.source
+  // };
 
-  const template = document.createElement("template");
+  try {
+    const number = userLinks.children.length + 1;
+    const rep = await fetch(
+      `/new_link?id=${link.id}&number=${number}&source=${link.source}&url=${link.url}`
+    );
+    const html         = await rep.text();    
+    const template     = document.createElement("template");
+    template.innerHTML = html;
+    const clone        = template.content.firstElementChild?.cloneNode(true);
 
-  if (!compiledLinkTemplate) {
-    const resp = await fetch("/public/templates/link.ejs");
-    const text = await resp.text();
-    const ejs  = await import("/scripts/ejs.min.js");
-    compiledLinkTemplate = ejs.compile(text);    
+    userLinks.appendChild(clone);
+    setLinkEventListeners(clone);
+  } catch (error) {
+    
   }
-  
-  template.innerHTML = compiledLinkTemplate({ index: userLinks.children.length + 1, link: newLink });  
-  const clone        = template.content.firstChild;
-  userLinks.appendChild(clone);
-  setLinkEventListeners(clone);
+
+  // const template = document.createElement("template");
+
+  // if (!compiledLinkTemplate) {
+  //   const resp = await fetch("/public/templates/link.ejs");
+  //   const text = await resp.text();
+  //   const ejs  = await import("/scripts/ejs.min.js");
+  //   compiledLinkTemplate = ejs.compile(text);
+  // }
+
+  // template.innerHTML = compiledLinkTemplate({ index: userLinks.children.length + 1, link: newLink });
+  // const clone        = template.content.firstChild;
+  // userLinks.appendChild(clone);
+  // setLinkEventListeners(clone);
 
   // forbid adding new links if only
   if (userLinks.children.length > 4) addNewLinkBtn.setAttribute("disabled", "");

@@ -70,98 +70,98 @@ export function getLinkInfoByName(name) {
   const info = {};
 
   if (name === "GitHub") {
-    info.domain    = "https://github.com/";
+    info.content   = "https://github.com/";
     info.whiteIcon = "icon-github.svg";
     info.grayIcon  = "icon-github-gray.svg";
     info.bgColor   = "bg-github";
     info.offset    = "10.8rem";
   }
   if (name === "LinkedIn") {
-    info.domain    = "https://linkedin.com/";
+    info.content   = "https://linkedin.com/";
     info.whiteIcon = "icon-linkedin.svg";
     info.grayIcon  = "icon-linkedin-gray.svg";
     info.bgColor   = "bg-linkedin";
     info.offset    = "11.5rem";
   }
   if (name === "GitLab") {
-    info.domain    = "https://gitlab.com/";
+    info.content   = "https://gitlab.com/";
     info.whiteIcon = "icon-gitlab.svg";
     info.grayIcon  = "icon-gitlab-gray.svg";
     info.bgColor   = "bg-gitlab";
     info.offset    = "10.4rem";
   }
   if (name === "StackOverflow") {
-    info.domain    = "https://stackoverflow.com/";
+    info.content   = "https://stackoverflow.com/";
     info.whiteIcon = "icon-stack-overflow.svg";
     info.grayIcon  = "icon-stack-overflow-gray.svg";
     info.bgColor   = "bg-stackoverflow";
     info.offset    = "14.2rem";
   }
   if (name === "YouTube") {
-    info.domain    = "https://youtube.com/";
+    info.content   = "https://youtube.com/";
     info.whiteIcon = "icon-youtube.svg";
     info.grayIcon  = "icon-youtube-gray.svg";
     info.bgColor   = "bg-youtube";
     info.offset    = "11.6rem";
   }
   if (name === "Facebook") {
-    info.domain    = "https://facebook.com/";
+    info.content   = "https://facebook.com/";
     info.whiteIcon = "icon-facebook.svg";
     info.grayIcon  = "icon-facebook-gray.svg";
     info.bgColor   = "bg-facebook";
     info.offset    = "12.2rem";
   }
   if (name === "Twitch") {
-    info.domain    = "https://twitch.tv/";
+    info.content   = "https://twitch.tv/";
     info.whiteIcon = "icon-twitch.svg";
     info.grayIcon  = "icon-twitch-gray.svg";
     info.bgColor   = "bg-twitch";
     info.offset    = "9.55rem";
   }
   if (name === "Twitter") {
-    info.domain    = "https://x.com/";
+    info.content   = "https://x.com/";
     info.whiteIcon = "icon-twitter.svg";
     info.grayIcon  = "icon-twitter-gray.svg";
     info.bgColor   = "bg-twitter";
     info.offset    = "8.4rem";
   }
   if (name === "Hashnode") {
-    info.domain    = "https://hashnode.com/";
+    info.content   = "https://hashnode.com/";
     info.whiteIcon = "icon-hashnode.svg";
     info.grayIcon  = "icon-hashnode-gray.svg";
     info.bgColor   = "bg-hashnode";
     info.offset    = "12.45rem";
   }
   if (name === "Codepen") {
-    info.domain    = "https://codepen.io/";
+    info.content   = "https://codepen.io/";
     info.whiteIcon = "icon-codepen.svg";
     info.grayIcon  = "icon-codepen-gray.svg";
     info.bgColor   = "bg-codepen";
     info.offset    = "10.7rem";
   }
   if (name === "Devto") {
-    info.domain    = "https://dev.to/";
+    info.content   = "https://dev.to/";
     info.whiteIcon = "icon-devto-gray.svg";
     info.grayIcon  = "icon-devto-gray.svg";
     info.bgColor   = "bg-devto";
     info.offset    = "8.35rem";
   }
   if (name === "Codewars") {
-    info.domain    = "https://codewars.com/";
+    info.content   = "https://codewars.com/";
     info.whiteIcon = "icon-codewars.svg";
     info.grayIcon  = "icon-codewars-gray.svg";
     info.bgColor   = "bg-codewars";
     info.offset    = "12.25rem";
   }
   if (name === "Freecodecamp") {
-    info.domain    = "https://freecodecamp.org/";
+    info.content   = "https://freecodecamp.org/";
     info.whiteIcon = "icon-freecodecamp.svg";
     info.grayIcon  = "icon-freecodecamp-gray.svg";
     info.bgColor   = "bg-freecodecamp";
     info.offset    = "14.15rem";
   }
   if (name === "Frontend mentor") {
-    info.domain    = "https://frontendmentor.io/";
+    info.content   = "https://frontendmentor.io/";
     info.whiteIcon = "icon-frontend-mentor.svg";
     info.grayIcon  = "icon-frontend-mentor-gray.svg";
     info.bgColor   = "bg-frontendmentor";

@@ -112,4 +112,39 @@ export class UserController {
       next(error);
     }
   }
+
+    /**
+   * @param {express.Request} req
+   * @param {express.Response} res
+   * @param {express.NextFunction} next
+   */
+  static async renderLink(req, res, next) {
+    const { id, number, source, url } = req.query;
+    const { content, grayIcon, offset } = getLinkInfoByName(source);
+    const newLink = {	
+      id: id,
+      number: number,
+      content: content,
+      grayIcon: grayIcon,	
+      offset: offset,
+      url: url,
+      source: source
+    };
+    try {
+      const compiled = getCompileEJS("/src/views/link.ejs");
+      const html     = compiled({ link: newLink });      
+      
+      // return res.format({
+      // 	json () { return res.json("html") },
+      // 	html () { return res.send(html) },
+      // });
+      
+      return res.send(html);
+      
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  
 }

@@ -3,11 +3,6 @@
 /** @type {HTMLButtonElement|null} */
 const signupBtn = document.querySelector('.signup-btn');
 
-/** @type {string} */
-// const url = process.env.NODE_ENV === "development" ?
-//       process.env.DEV_HOST ?? "unknown" :
-//       process.env.PROD_HOST ?? "unknown";
-
 // ************************** 1. Events *********************************//
 
 signupBtn?.addEventListener('click', async () => {
